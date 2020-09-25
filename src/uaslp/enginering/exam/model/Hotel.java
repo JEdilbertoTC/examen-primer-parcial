@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 public class Hotel {
     private ArrayList<Reservation> reservations;
+    private ArrayList<Room> rooms;
+    private String name;
 
-
-    public Hotel() {
+    public Hotel(String name) {
+        this.name = name;
         reservations = new ArrayList<>();
+        rooms = new ArrayList<>();
     }
 
     public void reserveRoom(int roomNumber, Guest guest, String arrivalDate, int nights) {
@@ -23,5 +26,17 @@ public class Hotel {
 
     public ArrayList<Reservation> getReservations() {
         return reservations;
+    }
+
+    public void addRoom(Room room){
+        if(room!=null) rooms.add(room);
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
     }
 }
